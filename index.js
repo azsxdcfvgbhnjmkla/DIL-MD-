@@ -1,3 +1,24 @@
+if (message.body.toLowerCase() === 'set autoread on') {
+  process.env.AUTO_READ_INBOX = 'true';
+  await client.sendMessage(message.from, '✅ Auto Read Inbox *ENABLED*', { quoted: message });
+}
+
+if (message.body.toLowerCase() === 'set autoread off') {
+  process.env.AUTO_READ_INBOX = 'false';
+  await client.sendMessage(message.from, '❌ Auto Read Inbox *DISABLED*', { quoted: message });
+}
+
+if (message.body.toLowerCase() === 'set groupcmd on') {
+  process.env.ALLOW_GROUP_COMMANDS = 'true';
+  await client.sendMessage(message.from, '✅ Group Commands *ALLOWED*', { quoted: message });
+}
+
+if (message.body.toLowerCase() === 'set groupcmd off') {
+  process.env.ALLOW_GROUP_COMMANDS = 'false';
+  await client.sendMessage(message.from, '❌ Group Commands *BLOCKED*', { quoted: message });
+}
+
+
 const settings = {
   AUTO_READ_INBOX: process.env.AUTO_READ_INBOX === 'true',
   ALLOW_GROUP_COMMANDS: process.env.ALLOW_GROUP_COMMANDS === 'true'
