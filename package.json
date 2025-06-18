@@ -1,7 +1,7 @@
 {
   "name": "dil-md-bot",
   "version": "1.0.0",
-  "description": "WhatsApp bot using Baileys",
+  "description": "WhatsApp bot using Baileys with autoread and command control features",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
@@ -9,11 +9,12 @@
   "author": "DIL-MD",
   "license": "MIT",
   "dependencies": {
-    "@adiwajshing/baileys": "^6.4.0",
-    "dotenv": "^16.0.0",
-    "pino": "^8.10.0"
+    "@adiwajshing/baileys": "^6.8.7",
+    "dotenv": "^16.1.4",
+    "pino": "^8.14.0",
+    "axios": "^1.4.0"
   },
   "engines": {
-    "node": "18.x"
+    "node": ">=16"
   }
 }
