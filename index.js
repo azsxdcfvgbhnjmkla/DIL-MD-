@@ -1,6 +1,12 @@
 
 require('dotenv').config();
 
+const botName = process.env.BOT_NAME || 'DIL-MD';
+
+console.log(`Bot name: ${botName}`);
+
+require('dotenv').config();
+
 const sessionId = process.env.SESSION_ID;
 
 require('dotenv').config();
