@@ -1,5 +1,13 @@
 
 require('dotenv').config();
+const mode = process.env.BOT_MODE || 'public';
+if (mode === 'private') {
+  // Bot in private mode: respond only to owner or allowed users
+} else {
+  // Bot in public mode: respond to everyone
+}
+
+require('dotenv').config();
 const fakeOnline = process.env.FAKE_ONLINE === 'true';
 // Usage example:
 if (fakeOnline) {
