@@ -1,7 +1,12 @@
+require('dotenv').config();
 
-const { useSingleFileAuthState } = require('@adiwajshing/baileys');
+const { makeWASocket, useSingleFileAuthState } = require('@whiskeysockets/baileys');
+const { default: P } = require('pino');
+const { state, saveState } = useSingleFileAuthState(`./${process.env.SESSION_ID}.json`);
 
-const { state, saveState } = useSingleFileAuthState('./auth.json');
+const sock = makeWASocket({
+  logger: P({ level: 'silent' }),
+  auth: state
+});
 
-module.exports = { state, saveState };
-
+sock.ev.on('creds.update', saveState);
