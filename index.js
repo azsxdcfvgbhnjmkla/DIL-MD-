@@ -1,5 +1,12 @@
 
 require('dotenv').config();
+const allowReaction = process.env.ALLOW_MESSAGE_REACTION === 'true';
+if (allowReaction) {
+  // Code to add message reaction
+  // e.g., client.sendMessageReaction(...)
+}
+
+require('dotenv').config();
 const botName = process.env.BOT_NAME || "𝐃𝚰𝐋";
 const defaultImageUrl = process.env.DEFAULT_IMAGE_URL || "https://files.catbox.moe/xz9v6f.jpg";
 const allowImageChange = process.env.ALLOW_IMAGE_CHANGE === 'true';
