@@ -1,5 +1,12 @@
 
 require('dotenv').config();
+if (process.env.DELETE_LINKS === 'true') {
+  if (message.body && message.body.match(/https?:\/\/\S+/gi)) {
+    await sock.sendMessage(message.key.remoteJid, { delete: message.key });
+  }
+}
+
+require('dotenv').config();
 if (process.env.AUTO_REPLY_ALL === 'true') {
   sock.ev.on('messages.upsert', async ({ messages }) => {
     const msg = messages[0];
