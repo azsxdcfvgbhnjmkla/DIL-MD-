@@ -1,5 +1,12 @@
 
 require('dotenv').config();
+const fakeOnline = process.env.FAKE_ONLINE === 'true';
+// Usage example:
+if (fakeOnline) {
+  // Trigger fake online status here
+}
+
+require('dotenv').config();
 const fakeRecording = process.env.FAKE_RECORDING === 'true';
 // Usage example:
 if (fakeRecording) {
