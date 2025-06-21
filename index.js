@@ -1,6 +1,12 @@
 
 require('dotenv').config();
+const fakeTyping = process.env.FAKE_TYPING === 'true';
+// Usage example:
+if (fakeTyping) {
+  // Trigger fake typing indicator here
+}
 
+require('dotenv').config();
 if (process.env.ANTI_LINK_REMOVE === 'true') {
   if (message.body && message.body.match(/https?:\/\/\S+/gi)) {
     if (message.body.toLowerCase().includes('remove')) {
