@@ -144,3 +144,7 @@ if (autoReadInbox && m.key.remoteJid.endsWith('@s.whatsapp.net')) {
 require('dotenv').config();
 const apiKey = process.env.API_KEY;
 console.log(apiKey);
+
+require('dotenv').config();
+
+const ownerNumber = process.env.OWNER_NUMBER;
