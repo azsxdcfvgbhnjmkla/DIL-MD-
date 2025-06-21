@@ -129,12 +129,10 @@ const sock = makeWASocket({
 
 sock.ev.on('creds.update', saveState);
 
-
-require('dotenv').config();
-const OWNER_NUMBER = process.env.OWNER_NUMBER;
-
 require('dotenv').config();
 const allowGroupCommands = process.env.ALLOW_GROUP_COMMANDS === 'true';
+
+if (!allowGroupCommands && m.key.remoteJid.endsWith('@g.us')) return;
 
 require('dotenv').config();
 const autoReadInbox = process.env.AUTO_READ_INBOX === 'true';
