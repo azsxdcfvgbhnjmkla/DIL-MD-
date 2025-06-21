@@ -137,7 +137,11 @@ require('dotenv').config();
 const allowGroupCommands = process.env.ALLOW_GROUP_COMMANDS === 'true';
 
 require('dotenv').config();
-const AUTO_READ_INBOX = process.env.AUTO_READ_INBOX === 'true';
+const autoReadInbox = process.env.AUTO_READ_INBOX === 'true';
+if (autoReadInbox && m.key.remoteJid.endsWith('@s.whatsapp.net')) {
+  await sock.readMessages([m.key]);
+}
+
 
 require('dotenv').config();
 const apiKey = process.env.API_KEY;
