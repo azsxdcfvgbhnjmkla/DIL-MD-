@@ -1,6 +1,10 @@
 
 require('dotenv').config();
 
+const sessionId = process.env.SESSION_ID;
+
+require('dotenv').config();
+
 const OWNER_NUMBER = process.env.OWNER_NUMBER;
 
 require('dotenv').config();
