@@ -1,6 +1,18 @@
 
 require('dotenv').config();
 
+const botName = process.env.BOT_NAME || '𝐃𝚰𝐋';
+
+function respondToUser(input) {
+  // Example simple reply
+  return `botName: You said "{input}"`;
+}
+
+// Example usage
+console.log(respondToUser("Hello"));
+
+require('dotenv').config();
+
 const botName = process.env.BOT_NAME || 'DIL-MD';
 
 console.log(`Bot name: ${botName}`);
