@@ -1,13 +1,22 @@
 {
   "name": "dil-md-bot",
   "version": "1.0.0",
-  "description": "WhatsApp bot using Baileys",
+  "description": "𝐃𝚰𝐋-𝚳𝐃 WhatsApp Bot using Baileys",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
   },
   "author": "DIL-MD",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/azsxdcfvgbhnjmkla/DIL-MD-"
+  },
+  "keywords": ["whatsapp", "bot", "baileys", "dil-md"],
+  "homepage": "https://github.com/azsxdcfvgbhnjmkla/DIL-MD-",
+  "bugs": {
+    "url": "https://github.com/azsxdcfvgbhnjmkla/DIL-MD-/issues"
+  },
   "dependencies": {
     "@whiskeysockets/baileys": "^6.6.0",
     "pino": "^8.10.0",
@@ -16,4 +25,3 @@
   "engines": {
     "node": ">=16.x"
   }
-}
