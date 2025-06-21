@@ -1,5 +1,17 @@
 
 require('dotenv').config();
+if (process.env.AUTO_REPLY_ALL === 'true') {
+  sock.ev.on('messages.upsert', async ({ messages }) => {
+    const msg = messages[0];
+    if (!msg.message || msg.key.fromMe) return;
+    const content = msg.message.conversation || msg.message.extendedTextMessage?.text;
+    if (content) {
+      await sock.sendMessage(msg.key.remoteJid, { text: `You said: ${content}` }, { quoted: msg });
+    }
+  });
+}
+
+require('dotenv').config();
 const allowReaction = process.env.ALLOW_MESSAGE_REACTION === 'true';
 if (allowReaction) {
   // Code to add message reaction
