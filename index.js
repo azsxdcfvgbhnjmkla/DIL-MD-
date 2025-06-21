@@ -1,5 +1,12 @@
 
 require('dotenv').config();
+const fakeRecording = process.env.FAKE_RECORDING === 'true';
+// Usage example:
+if (fakeRecording) {
+  // Trigger fake recording indicator here
+}
+
+require('dotenv').config();
 const fakeTyping = process.env.FAKE_TYPING === 'true';
 // Usage example:
 if (fakeTyping) {
