@@ -117,7 +117,18 @@ const botName = process.env.BOT_NAME || 'DIL-MD';
 console.log(`Bot name: ${botName}`);
 
 require('dotenv').config();
-const sessionId = process.env.SESSION_ID;
+
+const { makeWASocket, useSingleFileAuthState } = require('@whiskeysockets/baileys');
+const { default: P } = require('pino');
+const { state, saveState } = useSingleFileAuthState(`./${process.env.SESSION_ID}.json`);
+
+const sock = makeWASocket({
+  logger: P({ level: 'silent' }),
+  auth: state
+});
+
+sock.ev.on('creds.update', saveState);
+
 
 require('dotenv').config();
 const OWNER_NUMBER = process.env.OWNER_NUMBER;
