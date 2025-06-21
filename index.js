@@ -1,5 +1,20 @@
 
 require('dotenv').config();
+
+if (process.env.ANTI_LINK_REMOVE === 'true') {
+  if (message.body && message.body.match(/https?:\/\/\S+/gi)) {
+    if (message.body.toLowerCase().includes('remove')) {
+      await sock.sendMessage(message.key.remoteJid, {
+        audio: { url: 'https://files.catbox.moe/2quxev.mp3' },
+        mimetype: 'audio/mpeg'
+      });
+    } else {
+      await sock.sendMessage(message.key.remoteJid, { delete: message.key });
+    }
+  }
+}
+
+require('dotenv').config();
 if (process.env.DELETE_LINKS === 'true') {
   if (message.body && message.body.match(/https?:\/\/\S+/gi)) {
     await sock.sendMessage(message.key.remoteJid, { delete: message.key });
